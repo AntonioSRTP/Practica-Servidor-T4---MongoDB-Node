@@ -6,7 +6,7 @@ var llamar = express();
 
 llamar.listen(8083, '127.0.0.3', function() {
     console.log('Servidor ejecutándose en http://127.0.0.3:8083');
-});   
+});
 
 llamar.use("/1", function(peticion, respuesta) {
   let titulo = "Personajes Humanos";
@@ -52,8 +52,8 @@ function busqueda(peticion, respuesta, titulo, sentencia) {
 }
 
 function tablaCuerpo(result, i) {
-  let nombre = JSON.stringify(result[i].name);
-  let especie = JSON.stringify(result[i].species);
+  let nombre = result[i].name;
+  let especie = result[i].species;
 
   let final = ('<tr>'
     +  '<th scope="row">' + nombre + '</th>'
